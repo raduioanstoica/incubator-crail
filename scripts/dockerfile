@@ -1,0 +1,36 @@
+FROM openjdk:8
+
+MAINTAINER Radu Stoica <rst@zurich.ibm.com>
+
+# Default user and working directory
+USER root
+WORKDIR /root
+
+# Install and update system packages
+RUN apt-get -yqq update && \
+    apt-get install -yqq vim screen tmux && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /tmp/* 
+
+ADD zrl-deployment /root/zrl-deployment
+
+#  Modify configuration
+#RUN cp spark/conf/log4j.properties.template spark/conf/log4j.properties && \
+#    sed -i -e s/WARN/ERROR/g spark/conf/log4j.properties && \
+#    sed -i -e s/INFO/ERROR/g spark/conf/log4j.properties
+
+# Expose all Hadoop, Spark, Crail ports. See scripts/get_default_ports.sh
+# From yarn-default.xml
+EXPOSE 2181 8030 8031 8032 8033 8040 8042 8044 8045 8046 8047 8048 8088 8090 8188 8190 8788 9000 10200
+
+# From core-default.xml
+EXPOSE 2181
+
+# From hdfs-default.xml
+EXPOSE 8480 8481 8485 50010 50020 50070 50075 50090 50091 50100 50105 50470 50475
+
+# From mapred-default.xml
+EXPOSE 8080 9000 10020 10033 19888 19890 
+
+CMD ["/bin/bash"]
