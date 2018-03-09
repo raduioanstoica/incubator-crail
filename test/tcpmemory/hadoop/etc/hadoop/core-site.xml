@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://zac01-ib:9000</value>
+  </property>
+
+  <property>
+    <name>s3.replication</name>
+    <value>1</value>
+  </property>
+  
+  <property>
+    <name>s3native.replication</name>
+    <value>1</value>
+  </property>
+
+  <property> 
+    <name>dfs.replication</name> 
+    <value>1</value> 
+  </property>
+
+  <property>
+    <name>fs.crail.impl</name>
+    <value>org.apache.crail.hdfs.CrailHadoopFileSystem</value>
+  </property>
+
+  <property>
+    <name>fs.AbstractFileSystem.crail.impl</name>
+    <value>org.apache.crail.hdfs.CrailHDFS</value>
+  </property>
+
+<!--
+  <property>
+    <name>io.file.buffer.size</name>
+    <value>16777216</value>
+  </property>
+-->
+
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>${USER}/zrl/hadoop-tmp</value>
+  </property>
+
+  <property>
+    <name>fs.stocator.scheme.list</name>
+    <value>swift2d,s3d</value>
+  </property>
+
+  <property>
+    <name>fs.swift.impl</name>
+    <value>org.apache.hadoop.fs.swift.snative.SwiftNativeFileSystem</value>
+  </property>
+  
+  <property>
+    <name>fs.swift2d.impl</name>
+    <value>com.ibm.stocator.fs.ObjectStoreFileSystem</value>
+  </property>
+
+<!--  
+  <property>
+    <name>fs.stocator.swift2d.impl</name>
+    <value>com.ibm.stocator.fs.swift.SwiftAPIClient</value>
+  </property>
+
+  <property>
+    <name>fs.stocator.swift2d.scheme</name>
+    <value>swift2d</value>
+  </property>
+  -->
+
+  <property>
+    <name>fs.swift2d.service.spark.public</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>fs.swift2d.service.spark.tenant</name>
+    <value>service</value>
+  </property>
+
+  <property>
+    <name>fs.swift2d.service.spark.password</name>
+    <value>passw0rd</value>
+  </property>
+
+  <property>
+    <name>fs.swift2d.service.spark.username</name>
+    <value>swift</value>
+  </property>
+
+  <property>
+    <name>fs.swift2d.service.spark.auth.method</name>
+    <value>keystone</value>
+  </property>
+
+  <property>
+    <name>fs.swift2d.service.spark.auth.url</name>
+    <value>http://10.144.54.56:5000/v2.0/tokens</value>
+  </property>
+
+  <property>
+    <name>fs.swift2d.service.spark.region</name>
+    <value>LBCLEVERSAFE1</value>
+  </property>
+
+<property>
+    <name>fs.swift2d.service.spark.block.size</name>
+    <value>128</value>
+</property>
+
+<property>
+    <name>spark.fs.stocator.delay</name>
+    <value>0</value>
+</property>
+  
+  <property>
+    <name>fs.s3d.impl</name>
+    <value>com.ibm.stocator.fs.ObjectStoreFileSystem</value>
+  </property>
+  
+  <property>
+    <name>fs.stocator.s3d.impl</name>
+    <value>com.ibm.stocator.fs.s3.S3APIClient</value>
+  </property>
+  
+  <property>
+    <name>fs.stocator.s3d.scheme</name>
+    <value>s3d</value>
+  </property>
+  
+  <property>
+    <name>fs.s3d.service.access.key</name>
+    <value>DvXZ8jtQD7GYJANRBk6m</value>
+  </property>
+
+  <property>
+    <name>fs.s3d.service.secret.key</name>
+    <value>7VSbTymaLNWQPRktDjYEPVEhL8vLsn9SXiEyrUjK</value>
+  </property>
+
+  <property>
+    <name>fs.s3d.service.endpoint</name>
+    <value>http://127.0.0.1:50080/s3/</value> 
+    <!-- <value>http://10.144.54.52</value> -->
+    <!-- <value>http://127.0.0.1:50080/s3/</value> -->
+    <!--  <value>http://cos-access</value> -->
+  </property>
+
+  <property>
+    <name>fs.s3d.service.v2.signer.type</name>
+    <value>false</value>
+  </property>
+
+
+  <property>
+    <name>com.amazonaws.services.s3.disablePutObjectMD5Validation</name>
+    <value>true</value>
+  </property>
+
+  <!-- S3a-->
+  <property>
+    <name>fs.s3a.impl</name>
+    <value>org.apache.hadoop.fs.s3a.S3AFileSystem</value>
+    <value>org.apache.hadoop.fs.s3a.S3AFileSystem</value>
+    <description>The FileSystem for s3a</description>
+  </property>
+
+  <property>
+    <name>fs.s3a.access.key</name>
+    <value>DvXZ8jtQD7GYJANRBk6m</value>
+  </property>
+  <property>
+    <name>fs.s3a.endpoint</name>
+    <value>http://127.0.0.1:50080/s3</value>
+  </property>
+  <property>
+    <name>fs.s3a.secret.key</name>
+    <value>7VSbTymaLNWQPRktDjYEPVEhL8vLsn9SXiEyrUjK</value>
+  </property>
+
+  <property>
+    <name>fs.s3a.connection.ssl.enabled</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>fs.s3a.block.size</name>
+    <value>16777216</value> 
+<!--    <value>67108864</value>  -->
+  </property>
+
+<property>
+  <name>fs.s3a.multipart.size</name>
+  <value>134217728</value>
+  <description>How big (in bytes) to split upload or copy operations up into.
+    A suffix from the set {K,M,G,T,P} may be used to scale the numeric value.
+  </description>
+</property>
+
+  <property>
+    <name>fs.s3a.multipart.threshold</name>
+<!--   <value>134217728</value> -->
+<!--   <value>67108864</value> -->
+    <value>214748364700</value> 
+  </property>
+
+  <property>
+    <name>fs.s3a.connection.timeout</name>
+    <value>6000000</value>
+  </property>
+  <!-- End S3a props -->
+
+</configuration>
