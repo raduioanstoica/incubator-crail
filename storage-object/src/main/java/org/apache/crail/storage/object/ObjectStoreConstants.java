@@ -62,7 +62,7 @@ public class ObjectStoreConstants {
 	private static final String S3_PROTOCOL_KEY = "s3protocol";
 	public static String S3_PROTOCOL = "HTTP";
 	private static final String S3_SIGNER_KEY = "s3signer";
-	public static String S3_SIGNER = null; //other possible values "AWS3SignerType", "AWS4SignerType", "NoOpSignerType"
+	public static String S3_SIGNER = null; // possible values "AWS3SignerType", "AWS4SignerType", "NoOpSignerType"
 
 	public static void parseCmdLine(CrailConfiguration crailConfiguration, String[] args) throws IOException {
 		ObjectStoreConstants.updateConstants(crailConfiguration);

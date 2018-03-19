@@ -17,10 +17,9 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-
   <property>
     <name>fs.defaultFS</name>
-    <value>crail://zrl-md-node:9065</value>
+    <value>crail://${CRAIL_NAMENODE}:9065</value>
   </property>
 
   <property>
@@ -35,115 +34,11 @@
 
   <property>
     <name>io.file.buffer.size</name>
-    <!-- <value>67108864</value>-->
     <value>1048576</value>
   </property>
 
   <property>
     <name>hadoop.tmp.dir</name>
-    <value>/root/zrl/hadoop-tmp</value>
+    <value>${USER}/data/hadoop-tmp-dir</value>
   </property>
-
-  <property>
-    <name>fs.stocator.scheme.list</name>
-    <value>swift2d,s3d</value>
-  </property>
-
-  <property>
-    <name>fs.swift.impl</name>
-    <value>org.apache.hadoop.fs.swift.snative.SwiftNativeFileSystem</value>
-  </property>
-  
-  <property>
-    <name>fs.swift2d.impl</name>
-    <value>com.ibm.stocator.fs.ObjectStoreFileSystem</value>
-  </property>
-  
-  <property>
-    <name>fs.stocator.swift2d.impl</name>
-    <value>com.ibm.stocator.fs.swift.SwiftAPIClient</value>
-  </property>
-  
-  <property>
-    <name>fs.stocator.swift2d.scheme</name>
-    <value>swift2d</value>
-  </property>
-  
-  <property>
-    <name>fs.s3d.impl</name>
-    <value>com.ibm.stocator.fs.ObjectStoreFileSystem</value>
-  </property>
-  
-  <property>
-    <name>fs.stocator.s3d.impl</name>
-    <value>com.ibm.stocator.fs.s3.S3APIClient</value>
-  </property>
-  
-  <property>
-    <name>fs.stocator.s3d.scheme</name>
-    <value>s3d</value>
-  </property>
-  
-  <property>
-    <name>fs.s3d.service.access.key</name>
-    <value>DvXZ8jtQD7GYJANRBk6m</value>
-  </property>
-
-  <property>
-    <name>fs.s3d.service.secret.key</name>
-    <value>7VSbTymaLNWQPRktDjYEPVEhL8vLsn9SXiEyrUjK</value>
-  </property>
-
-  <property>
-    <name>fs.s3d.service.endpoint</name>
-    <value>http://127.0.0.1:50080/s3/</value> 
-    <!-- <value>http://10.144.54.52</value> -->
-    <!-- <value>http://127.0.0.1:50080/s3/</value> -->
-    <!--  <value>http://cos-access</value> -->
-  </property>
-
-  <property>
-    <name>fs.s3d.service.v2.signer.type</name>
-    <value>false</value>
-  </property>
-
-
-  <property>
-    <name>com.amazonaws.services.s3.disablePutObjectMD5Validation</name>
-    <value>true</value>
-  </property>
-
-  <!-- S3a-->
-  <property>
-    <name>fs.s3a.access.key</name>
-    <value>DvXZ8jtQD7GYJANRBk6m</value>
-  </property>
-  <property>
-    <name>fs.s3a.endpoint</name>
-    <value>http://127.0.0.1:50080/s3</value>
-  </property>
-  <property>
-    <name>fs.s3a.secret.key</name>
-    <value>7VSbTymaLNWQPRktDjYEPVEhL8vLsn9SXiEyrUjK</value>
-  </property>
-
-  <property>
-    <name>fs.s3a.connection.ssl.enabled</name>
-    <value>false</value>
-  </property>
-  <property>
-    <name>fs.s3a.block.size</name>
-    <value>134217728</value>
-  </property>
-  <!--<property>
-    <name>fs.s3a.multipart.threshold</name>
-    <value>52428800</value>
-  </property>-->
-
-  <property>
-    <name>fs.s3a.connection.timeout</name>
-    <value>600000</value>
-  </property>
-  <!-- End S3a props -->
-
 </configuration>
