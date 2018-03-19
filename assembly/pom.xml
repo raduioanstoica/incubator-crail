@@ -80,12 +80,14 @@
       <groupId>org.apache.crail</groupId>
       <artifactId>crail-rpc-narpc</artifactId>
       <version>1.0</version>
-    </dependency>
+  </dependency>
+  <!--
     <dependency>
       <groupId>org.apache.crail</groupId>
       <artifactId>crail-storage-object</artifactId>
       <version>1.0</version>
     </dependency>
+  -->
   </dependencies>
 
   <build>
